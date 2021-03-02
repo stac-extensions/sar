@@ -9,15 +9,20 @@
 - **History**: [Prior to March 2, 2021](https://github.com/radiantearth/stac-spec/tree/e5ed34f4fa1f1ad6ad479483fe308adfa8edc60d/extensions/sar)
 
 This document explains the fields of the STAC Synthetic-Aperture Radar (SAR) Extension to a STAC Item.
-SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system such as Sentinel-1, RADARSAT or EnviSAT.
+SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system 
+such as Sentinel-1, RADARSAT or EnviSAT.
 
-If the data has been collected by a satellite, it is strongly recommended to use the [`sat` extension](https://github.com/stac-extensions/sat/tree/master/README.md). If the data has been collected on an airborne platform it is strongly recommended to use the [Instrument Fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#instrument).
+If the data has been collected by a satellite, it is strongly recommended to use the 
+[`sat` extension](https://github.com/stac-extensions/sat/tree/master/README.md). 
+If the data has been collected on an airborne platform it is strongly recommended to use the 
+[Instrument Fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#instrument).
 
-To describe frame start and end times, use the [Date and Time Range fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#date-and-time-range).
+To describe frame start and end times, use the
+[Date and Time Range fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#date-and-time-range).
 
 - Examples:
-    - [Envisat](examples/envisat.json)
-    - [Sentinel-1](examples/sentinel-1.json)
+  - [Envisat](examples/envisat.json)
+  - [Sentinel-1](examples/sentinel-1.json)
 - [JSON Schema](json-schema/schema.json)
 
 ## Item Properties and Collection Fields
@@ -38,9 +43,13 @@ To describe frame start and end times, use the [Date and Time Range fields](http
 | sar:looks_equivalent_number | number    | The equivalent number of looks (ENL). |
 | sar:observation_direction   | string    | Antenna pointing direction relative to the flight trajectory of the satellite, either `left` or `right`. |
 
-**Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values are meant to be measured parallel to the flight path.
+**Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values 
+are meant to be measured parallel to the flight path.
 
-**sar:polarizations** specifies a single polarization or a polarization combination. For single polarized radars one of `HH`, `VV`, `HV` or `VH` must be set. Fully polarimetric radars add all four polarizations to the array. Dual polarized radars and alternating polarization add the corresponding polarizations to the array, for instance for `HH+HV` add both `HH` and `HV`.
+**sar:polarizations** specifies a single polarization or a polarization combination. For single polarized radars one of 
+`HH`, `VV`, `HV` or `VH` must be set. Fully polarimetric radars add all four polarizations to the array. 
+Dual polarized radars and alternating polarization add the corresponding polarizations to the array, 
+for instance for `HH+HV` add both `HH` and `HV`.
 
 **sar:product_type**: The product type defines the type of processed data contained in the assets. A list of suggestions include:
 
@@ -80,7 +89,10 @@ The center time of the frame should be specified with the `datetime` property fo
 
 ## Best Practices
 
-One of the emerging best practices is to use [Asset Roles](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#asset-roles) to provide clients with more information about the assets in an item. The following list includes a shared vocabulary for some common SAR assets. This list should not be considered definitive, and implementors are welcome to use other asset roles. If consensus and tooling consolidates around these role names then they will be specified in the future as more standard than just 'best practices'.
+One of the emerging best practices is to use [Asset Roles](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#asset-roles) 
+to provide clients with more information about the assets in an item. The following list includes a shared vocabulary for some common SAR assets. 
+This list should not be considered definitive, and implementors are welcome to use other asset roles. If consensus and tooling consolidates around 
+these role names then they will be specified in the future as more standard than just 'best practices'.
 
 | Role Name | Description                                                            |
 | --------- | ---------------------------------------------------------------------- |
