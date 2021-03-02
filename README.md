@@ -6,7 +6,6 @@
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @m-mohr, @emmanuelmathot
-- **History**: [Prior to March 2, 2021](https://github.com/radiantearth/stac-spec/tree/e5ed34f4fa1f1ad6ad479483fe308adfa8edc60d/extensions/sar)
 
 This document explains the fields of the STAC Synthetic-Aperture Radar (SAR) Extension to a STAC Item.
 SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system 
