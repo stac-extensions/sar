@@ -94,7 +94,7 @@
           "type": "array",
           "minItems": 1,
           "maxItems": 4,
-          "uniqueItems": true,
+          "uniqueItems": false,
           "items": {
             "type": "string",
             "enum": [
