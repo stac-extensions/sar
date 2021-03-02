@@ -1,6 +1,9 @@
 {
   "type": "Feature",
   "stac_version": "1.0.0-beta.2",
+  "stac_extensions": [
+    "https://schemas.stacspec.org/v1.0.0/extensions/sar/json-schema/schema.json"
+  ],
   "id": "sar-envisat-example",
   "properties": {
     "datetime": "2009-05-20T02:40:46.763325Z",
@@ -11,7 +14,6 @@
     "instruments": [
       "asar"
     ],
-    "sat:orbit_state": "descending",
     "sar:instrument_mode": "GM",
     "sar:polarizations": [
       "HH"
@@ -93,9 +95,5 @@
     114.587673,
     71.179088,
     128.611298
-  ],
-  "stac_extensions": [
-    "sat",
-    "sar"
   ]
 }

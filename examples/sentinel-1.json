@@ -2,9 +2,7 @@
   "type": "Feature",
   "stac_version": "1.0.0-beta.2",
   "stac_extensions": [
-    "file",
-    "sar",
-    "sat"
+    "https://schemas.stacspec.org/v1.0.0/extensions/sar/json-schema/schema.json"
   ],
   "id": "sentinel-1-example",
   "properties": {
@@ -16,8 +14,6 @@
     "instruments": [
       "c-sar"
     ],
-    "sat:orbit_state": "ascending",
-    "sat:relative_orbit": 33,
     "sar:instrument_mode": "EW",
     "sar:polarizations": [
       "HH"
@@ -76,20 +72,17 @@
     "noises": {
       "href": "https://example.com/collections/sentinel-1/items/annotation/calibration/noise-s1a-ew-grd-hh-20181103t235855-20181103t235955-024430-02ad5d-001.xml",
       "type": "text/xml",
-      "title": "Calibration Schema",
-      "file:checksum": "90e40210a30d1711e81a4b11ef67b28744321659"
+      "title": "Calibration Schema"
     },
     "calibrations": {
       "href": "https://example.com/collections/sentinel-1/items/annotation/calibration/calibration-s1a-ew-grd-hh-20181103t235855-20181103t235955-024430-02ad5d-001.xml",
       "type": "text/xml",
-      "title": "Noise Schema",
-      "file:checksum": "90e402104fc5351af67db0b8f1746efe421a05e4"
+      "title": "Noise Schema"
     },
     "products": {
       "href": "https://example.com/collections/sentinel-1/items/annotation/s1a-ew-grd-hh-20181103t235855-20181103t235955-024430-02ad5d-001.xml",
       "type": "text/xml",
-      "title": "Product Schema",
-      "file:checksum": "90e402107a7f2588a85362b9beea2a12d4514d45"
+      "title": "Product Schema"
     },
     "measurement": {
       "href": "https://example.com/collections/sentinel-1/items/measurement/s1a-ew-grd-hh-20181103t235855-20181103t235955-024430-02ad5d-001.tiff",
@@ -97,14 +90,12 @@
       "title": "Measurements",
       "sar:polarizations": [
         "HH"
-      ],
-      "file:checksum": "90e40210163700a8a6501eccd00b6d3b44ddaed0"
+      ]
     },
     "thumbnail": {
       "href": "https://example.com/collections/sentinel-1/items/preview/quick-look.png",
       "type": "image/png",
-      "title": "Thumbnail",
-      "file:checksum": "90e40210f52acd32b09769d3b1871b420789456c"
+      "title": "Thumbnail"
     }
   },
   "bbox": [
