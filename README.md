@@ -6,13 +6,14 @@
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @m-mohr, @emmanuelmathot
+- **History**: [Prior to March 2, 2021](https://github.com/radiantearth/stac-spec/commits/v1.0.0-rc.1/extensions/sar)
 
-This document explains the fields of the STAC Synthetic-Aperture Radar (SAR) Extension to a STAC Item.
+This document explains the fields of the [STAC](https://github.com/radiantearth/stac-spec) Synthetic-Aperture Radar (SAR) Extension to a STAC Item.
 SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system 
 such as Sentinel-1, RADARSAT or EnviSAT.
 
 If the data has been collected by a satellite, it is strongly recommended to use the 
-[`sat` extension](https://github.com/stac-extensions/sat/tree/master/README.md). 
+[`sat` extension](https://github.com/stac-extensions/sat). 
 If the data has been collected on an airborne platform it is strongly recommended to use the 
 [Instrument Fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#instrument).
 
@@ -24,7 +25,7 @@ To describe frame start and end times, use the
   - [Sentinel-1](examples/sentinel-1.json)
 - [JSON Schema](json-schema/schema.json)
 
-## Item Properties and Collection Fields
+## Item Properties
 
 | Field Name                  | Type      | Description                                                  |
 | --------------------------- | --------- | ------------------------------------------------------------ |
@@ -45,12 +46,21 @@ To describe frame start and end times, use the
 **Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values 
 are meant to be measured parallel to the flight path.
 
-**sar:polarizations** specifies a single polarization or a polarization combination. For single polarized radars one of 
+### Additional Field Information
+
+#### sar:polarizations
+
+Specifies a single polarization or a polarization combination. For single polarized radars one of 
 `HH`, `VV`, `HV` or `VH` must be set. Fully polarimetric radars add all four polarizations to the array. 
 Dual polarized radars and alternating polarization add the corresponding polarizations to the array, 
 for instance for `HH+HV` add both `HH` and `HV`.
 
-**sar:product_type**: The product type defines the type of processed data contained in the assets. A list of suggestions include:
+**Important:** In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements. 
+In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
+
+#### sar:product_type
+
+The product type defines the type of processed data contained in the assets. A list of suggestions include:
 
 | sar:product_type  | Type      | Description |
 | ----------------- | --------- | ----------- |
