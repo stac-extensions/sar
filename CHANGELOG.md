@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-## [v1.0.0] - 2021-03-05
+## [v1.0.0] - 2021-03-04
 
 ### Added
 - Best practices and asset roles
