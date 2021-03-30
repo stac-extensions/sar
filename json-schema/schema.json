@@ -81,7 +81,7 @@
         },
         {
           "$ref": "#/definitions/stac_extensions"
-        },
+        }
       ]
     }
   ],
@@ -107,6 +107,7 @@
         "sar:instrument_mode": {
           "title": "Instrument Mode",
           "type": "string",
+          "minLength": 1,
           "example": "WV"
         },
         "sar:frequency_band": {
@@ -144,6 +145,7 @@
         "sar:product_type": {
           "title": "Product type",
           "type": "string",
+          "minLength": 1,
           "examples": [
             "SSC",
             "MGD",
