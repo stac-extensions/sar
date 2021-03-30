@@ -8,7 +8,9 @@
 - **Owner**: @m-mohr, @emmanuelmathot
 - **History**: [Prior to March 2, 2021](https://github.com/radiantearth/stac-spec/commits/v1.0.0-rc.1/extensions/sar)
 
-This document explains the fields of the [STAC](https://github.com/radiantearth/stac-spec) Synthetic-Aperture Radar (SAR) Extension to a STAC Item.
+This document explains the fields of the Synthetic-Aperture Radar (SAR) Extension to the
+[SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+
 SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system 
 such as Sentinel-1, RADARSAT or EnviSAT.
 
@@ -24,8 +26,9 @@ To describe frame start and end times, use the
   - [Envisat](examples/envisat.json)
   - [Sentinel-1](examples/sentinel-1.json)
 - [JSON Schema](json-schema/schema.json)
+- [Changelog](./CHANGELOG.md)
 
-## Item Properties
+## Item Properties or Asset Fields
 
 | Field Name                  | Type      | Description                                                  |
 | --------------------------- | --------- | ------------------------------------------------------------ |
@@ -116,3 +119,34 @@ these role names then they will be specified in the future as more standard than
 | date-offset | Points to the date-offset file. |
 | covmat | Points to the Points to the Normalized Polarimetric Radar Covariance Matrix (CovMat) file. |
 | prd | Points to the Polarimetric Radar Decomposition (PRD) file. |
+
+## Contributing
+
+All contributions are subject to the
+[STAC Specification Code of Conduct](https://github.com/radiantearth/stac-spec/blob/master/CODE_OF_CONDUCT.md).
+For contributions, please follow the
+[STAC specification contributing guide](https://github.com/radiantearth/stac-spec/blob/master/CONTRIBUTING.md) Instructions
+for running tests are copied here for convenience.
+
+### Running tests
+
+The same checks that run as checks on PR's are part of the repository and can be run locally to verify that changes are valid. 
+To run tests locally, you'll need `npm`, which is a standard part of any [node.js installation](https://nodejs.org/en/download/).
+
+First you'll need to install everything with npm once. Just navigate to the root of this repository and on 
+your command line run:
+```bash
+npm install
+```
+
+Then to check markdown formatting and test the examples against the JSON schema, you can run:
+```bash
+npm test
+```
+
+This will spit out the same texts that you see online, and you can then go and fix your markdown or examples.
+
+If the tests reveal formatting problems with the examples, you can fix them with:
+```bash
+npm run format-examples
+```
