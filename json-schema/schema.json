@@ -107,6 +107,9 @@
         "sar:instrument_mode": {
           "title": "Instrument Mode",
           "type": "string",
+          "examples": [
+            "WV"
+          ],
           "minLength": 1,
           "example": "WV"
         },
