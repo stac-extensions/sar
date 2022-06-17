@@ -76,7 +76,7 @@ The product type defines the type of processed data contained in the assets. A l
 | SGC               | complex   | Single-look Ground projected Complex image |
 | SLC               | complex   | Single-look Ground projected Complex image (used by Sentinel-1) |
 
-This can vary by data provider, who all may use slightly different names. Sentinel-1 for instance uses `GRD`, wihch is the same as the more general `MGD` and `SLC` instead of `SGC`. 
+This can vary by data provider, who all may use slightly different names. Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`. 
 
 ### Common Frequency Band Names
 
