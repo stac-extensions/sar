@@ -4,7 +4,7 @@
 - **Identifier:** <https://stac-extensions.github.io/sar/v1.0.0/schema.json>
 - **Field Name Prefix:** sar
 - **Scope:** Item, Collection
-- **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Candidate
+- **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/blob/master/extensions/README.md#extension-maturity):** Candidate
 - **Owner**: @m-mohr, @emmanuelmathot
 - **History**: [Prior to March 2, 2021](https://github.com/radiantearth/stac-spec/commits/v1.0.0-rc.1/extensions/sar)
 
@@ -17,10 +17,10 @@ such as Sentinel-1, RADARSAT or EnviSAT.
 If the data has been collected by a satellite, it is strongly recommended to use the 
 [`sat` extension](https://github.com/stac-extensions/sat). 
 If the data has been collected on an airborne platform it is strongly recommended to use the 
-[Instrument Fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#instrument).
+[Instrument Fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#instrument).
 
 To describe frame start and end times, use the
-[Date and Time Range fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#date-and-time-range).
+[Date and Time Range fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#date-and-time-range).
 
 - Examples:
   - [Envisat](examples/envisat.json)
@@ -96,12 +96,12 @@ properties. The table below shows the common name based on the wavelength and fr
 
 ### Date and Time
 
-In SAR, you usually have frame start and end time. To describe this information it is recommended to use the [Date and Time Range fields](https://github.com/radiantearth/stac-spec/tree/master/item-spec/common-metadata.md#date-and-time-range).
+In SAR, you usually have frame start and end time. To describe this information it is recommended to use the [Date and Time Range fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#date-and-time-range).
 The center time of the frame should be specified with the `datetime` property for STAC Items.
 
 ## Best Practices
 
-One of the emerging best practices is to use [Asset Roles](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#asset-roles) 
+One of the emerging best practices is to use [Asset Roles](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#asset-roles) 
 to provide clients with more information about the assets in an item. The following list includes a shared vocabulary for some common SAR assets. 
 This list should not be considered definitive, and implementors are welcome to use other asset roles. If consensus and tooling consolidates around 
 these role names then they will be specified in the future as more standard than just 'best practices'.
