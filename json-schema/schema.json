@@ -34,8 +34,7 @@
               "required": [
                 "sar:instrument_mode",
                 "sar:frequency_band",
-                "sar:polarizations",
-                "sar:product_type"
+                "sar:polarizations"
               ],
               "properties": {
                 "sar:polarizations": {
