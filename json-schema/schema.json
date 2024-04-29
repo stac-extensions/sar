@@ -3,103 +3,87 @@
   "$id": "https://stac-extensions.github.io/sar/v1.0.0/schema.json",
   "title": "SAR Extension",
   "description": "STAC SAR Extension to a STAC Item",
+  "type": "object",
+  "required": [
+    "stac_extensions"
+  ],
+  "properties": {
+    "stac_extensions": {
+      "type": "array",
+      "contains": {
+        "const": "https://stac-extensions.github.io/sar/v1.0.0/schema.json"
+      }
+    }
+  },
   "oneOf": [
     {
       "$comment": "This is the schema for STAC Items.",
-      "allOf": [
-        {
-          "type": "object",
-          "required": [
-            "type",
-            "properties",
-            "assets"
-          ],
-          "properties": {
-            "type": {
-              "const": "Feature"
-            },
-            "properties": {
-              "allOf": [
-                {
-                  "required": [
-                    "sar:instrument_mode",
-                    "sar:frequency_band",
-                    "sar:polarizations",
-                    "sar:product_type"
-                  ],
-                  "properties": {
-                    "sar:polarizations": {
-                      "type": "array",
-                      "maxItems": 4,
-                      "uniqueItems": true
-                    }
-                  }
-                },
-                {
-                  "$ref": "#/definitions/fields"
-                }
-              ]
-            },
-            "assets": {
-              "type": "object",
-              "additionalProperties": {
-                "$ref": "#/definitions/fields"
-              }
-            }
-          }
-        },
-        {
-          "$ref": "#/definitions/stac_extensions"
-        }
-      ]
-    },
-    {
-      "$comment": "This is the schema for STAC Collections.",
-      "allOf": [
-        {
-          "type": "object",
-          "required": [
-            "type"
-          ],
-          "properties": {
-            "type": {
-              "const": "Collection"
-            },
-            "assets": {
-              "type": "object",
-              "additionalProperties": {
-                "$ref": "#/definitions/fields"
-              }
-            },
-            "item_assets": {
-              "type": "object",
-              "additionalProperties": {
-                "$ref": "#/definitions/fields"
-              }
-            }
-          }
-        },
-        {
-          "$ref": "#/definitions/stac_extensions"
-        }
-      ]
-    }
-  ],
-  "definitions": {
-    "stac_extensions": {
       "type": "object",
       "required": [
-        "stac_extensions"
+        "type",
+        "properties",
+        "assets"
       ],
       "properties": {
-        "stac_extensions": {
-          "type": "array",
-          "contains": {
-            "const": "https://stac-extensions.github.io/sar/v1.0.0/schema.json"
+        "type": {
+          "const": "Feature"
+        },
+        "properties": {
+          "allOf": [
+            {
+              "required": [
+                "sar:instrument_mode",
+                "sar:frequency_band",
+                "sar:polarizations",
+                "sar:product_type"
+              ],
+              "properties": {
+                "sar:polarizations": {
+                  "type": "array",
+                  "maxItems": 4,
+                  "uniqueItems": true
+                }
+              }
+            },
+            {
+              "$ref": "#/definitions/fields"
+            }
+          ]
+        },
+        "assets": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/fields"
           }
         }
       }
     },
+    {
+      "$comment": "This is the schema for STAC Collections.",
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "Collection"
+        },
+        "assets": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/fields"
+          }
+        },
+        "item_assets": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/fields"
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
     "fields": {
       "$comment": "Add your new fields here. Don't require them here, do that above in the item schema.",
       "type": "object",
@@ -110,8 +94,7 @@
           "examples": [
             "WV"
           ],
-          "minLength": 1,
-          "example": "WV"
+          "minLength": 1
         },
         "sar:frequency_band": {
           "title": "Frequency Band",
