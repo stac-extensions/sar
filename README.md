@@ -89,7 +89,7 @@ properties. The table below shows the common name based on the wavelength and fr
 | L           | 15 - 30               | 1 - 2                 | ALOS, JERS, NISAR, SOACOM |
 | S           | 7.5 - 15              | 2 - 4                 | HJ-1C |
 | C           | 3.8 - 7.5             | 4 - 8                 | EnviSat, ERS, Radarsat, Risat-1, Sentinel-1 |
-| X           | 2.4 - 3.8             | 8 - 12.5              | Cosmo-SkyMed, TerraSAR-X, RanDEM-X, PAZ, KOMPSat-5 |
+| X           | 2.4 - 3.8             | 8 - 12.5              | Cosmo-SkyMed, TerraSAR-X, TanDEM-X, PAZ, KOMPSat-5 |
 | Ku          | 1.7 - 2.4             | 12.5 - 18             | |
 | K           | 1.1 - 1.7             | 18 - 26.5             | |
 | Ka          | 0.75 - 1.1            | 26.5 - 40             | |
