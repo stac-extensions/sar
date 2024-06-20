@@ -30,22 +30,22 @@ To describe frame start and end times, use the
 
 ## Item Properties or Asset Fields
 
-| Field Name                  | Type           | Description                                                                                                                                                                                            |
-| --------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| sar:instrument_mode         | string         | **REQUIRED.** The name of the sensor acquisition mode that is commonly used. This should be the short name, if available. For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites. |
-| sar:frequency_band          | string         | **REQUIRED.** The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names.                 |
-| sar:center_frequency        | number         | The center frequency of the instrument, in gigahertz (GHz).                                                                                                                                            |
-| sar:polarizations           | \[string]      | **REQUIRED.** Any combination of polarizations.                                                                                                                                                        |
-| sar:product_type            | string         | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* The product type, for example `SSC`, `MGD`, or `SGC`                                                        |
-| sar:resolution_range        | number         | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m).                                                                |
-| sar:resolution_azimuth      | number         | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m).                                                                   |
-| sar:pixel_spacing_range     | number         | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`.               |
-| sar:pixel_spacing_azimuth   | number         | The azimuth pixel spacing, which is the distance between adjacent pixels parallel to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`.                  |
-| sar:looks_range             | number         | Number of range looks, which is the number of groups of signal samples (looks) perpendicular to the flight path.                                                                                       |
-| sar:looks_azimuth           | number         | Number of azimuth looks, which is the number of groups of signal samples (looks) parallel to the flight path.                                                                                          |
-| sar:looks_equivalent_number | number         | The equivalent number of looks (ENL).                                                                                                                                                                  |
-| sar:observation_direction   | string         | Antenna pointing direction relative to the flight trajectory of the satellite, either `left` or `right`.                                                                                               |
-| sar:swath                   | \[Beam Object] | Composition of the swath of the SAR acquisition.                                                                                                                                                       |
+| Field Name                  | Type                           | Description                                                                                                                                                                                            |
+| --------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| sar:instrument_mode         | string                         | **REQUIRED.** The name of the sensor acquisition mode that is commonly used. This should be the short name, if available. For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites. |
+| sar:frequency_band          | string                         | **REQUIRED.** The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names.                 |
+| sar:center_frequency        | number                         | The center frequency of the instrument, in gigahertz (GHz).                                                                                                                                            |
+| sar:polarizations           | \[string]                      | **REQUIRED.** Any combination of polarizations.                                                                                                                                                        |
+| sar:product_type            | string                         | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* The product type, for example `SSC`, `MGD`, or `SGC`                                                        |
+| sar:resolution_range        | number                         | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m).                                                                |
+| sar:resolution_azimuth      | number                         | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m).                                                                   |
+| sar:pixel_spacing_range     | number                         | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`.               |
+| sar:pixel_spacing_azimuth   | number                         | The azimuth pixel spacing, which is the distance between adjacent pixels parallel to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`.                  |
+| sar:looks_range             | number                         | Number of range looks, which is the number of groups of signal samples (looks) perpendicular to the flight path.                                                                                       |
+| sar:looks_azimuth           | number                         | Number of azimuth looks, which is the number of groups of signal samples (looks) parallel to the flight path.                                                                                          |
+| sar:looks_equivalent_number | number                         | The equivalent number of looks (ENL).                                                                                                                                                                  |
+| sar:observation_direction   | string                         | Antenna pointing direction relative to the flight trajectory of the satellite, either `left` or `right`.                                                                                               |
+| sar:swath                   | \[[Beam Object](#beam-object)] | Composition of the swath of the SAR acquisition.                                                                                                                                                       |
 
 **Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values 
 are meant to be measured parallel to the flight path.
@@ -64,7 +64,7 @@ In assets `sar:polarizations` can contain duplicate elements and, if possible, t
 
 ### Beam Object
 
-The `sar:swath` field is an array of objects that describe the composition  of the swath of the SAR acquisition.
+The beam object is used to describe the swath of the SAR acquisition.
 According to the instrument mode defined in `sar:instrument_mode`, the `sar:swath` is composed of one or more beams.
 
 | Field Name     | Type                  | Description                                                                            |
