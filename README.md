@@ -24,7 +24,9 @@ To describe frame start and end times, use the
 
 - Examples:
   - [Envisat](examples/envisat.json)
-  - [Sentinel-1](examples/sentinel-1.json)
+  - [Sentinel-1 GRD EW](examples/sentinel-1-grd-ew.json)
+  - [Sentinel-1 GRD S4](examples/sentinel-1-grd-s4.json)
+  - [Sentinel-1 SLC IW](examples/sentinel-1-slc-iw.json)
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
 
