@@ -36,7 +36,7 @@ To describe frame start and end times, use the
 | sar:frequency_band          | string    | **REQUIRED.** The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names. |
 | sar:center_frequency        | number    | The center frequency of the instrument, in gigahertz (GHz). |
 | sar:polarizations           | \[string] | **REQUIRED.** Any combination of polarizations. |
-| sar:product_type            | string    | **REQUIRED.** The product type, for example `SSC`, `MGD`, or `SGC` |
+| sar:product_type            | string    | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* The product type, for example `SSC`, `MGD`, or `SGC` |
 | sar:resolution_range        | number    | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m).  |
 | sar:resolution_azimuth      | number    | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m).  |
 | sar:pixel_spacing_range     | number    | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`. |
@@ -61,23 +61,6 @@ for instance for `HH+HV` add both `HH` and `HV`.
 **Important:** In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements. 
 In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
 
-#### sar:product_type
-
-The product type defines the type of processed data contained in the assets. A list of suggestions include:
-
-| sar:product_type  | Type      | Description |
-| ----------------- | --------- | ----------- |
-| SSC               | complex   | Single-look Slant-range Complex image (standard SLC) |
-| MGD               | amplitude | Multilooked Ground-range Detected image |
-| GRD               | amplitude | Multilooked Ground-range Detected image (used by Sentinel-1) |
-| GEC               | amplitude | Geocoded Ellipsoid Corrected image |
-| GTC               | amplitude | Geocoded Terrain Corrected image |
-| RTC               | amplitude | Geocoded Radiometrically Terrain Corrected image |
-| SGC               | complex   | Single-look Ground projected Complex image |
-| SLC               | complex   | Single-look Ground projected Complex image (used by Sentinel-1) |
-
-This can vary by data provider, who all may use slightly different names. Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`. 
-
 ### Common Frequency Band Names
 
 The `sar:frequency_band` is the name that is commonly used to refer to that band's spectral
@@ -93,6 +76,30 @@ properties. The table below shows the common name based on the wavelength and fr
 | Ku          | 1.7 - 2.4             | 12.5 - 18             | |
 | K           | 1.1 - 1.7             | 18 - 26.5             | |
 | Ka          | 0.75 - 1.1            | 26.5 - 40             | |
+
+### Product type
+
+The product type for SAR data defines the type of processed data contained in the assets.
+A list of suggestions for [`product:type`](https://github.com/stac-extensions/product) include:
+
+| product:type | Type      | Description |
+| ------------ | --------- | ----------- |
+| SSC          | complex   | Single-look Slant-range Complex image (standard SLC) |
+| MGD          | amplitude | Multilooked Ground-range Detected image |
+| GRD          | amplitude | Multilooked Ground-range Detected image (used by Sentinel-1) |
+| GEC          | amplitude | Geocoded Ellipsoid Corrected image |
+| GTC          | amplitude | Geocoded Terrain Corrected image |
+| RTC          | amplitude | Geocoded Radiometrically Terrain Corrected image |
+| SGC          | complex   | Single-look Ground projected Complex image |
+| SLC          | complex   | Single-look Ground projected Complex image (used by Sentinel-1) |
+
+This can vary by data provider, who all may use slightly different names.
+Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`. 
+
+**Note:**
+- v1.0 of the extension did require `sar:product_type`.
+- v1.1 deprecates `sar:product_type` and it's not required any longer, but `product:type` is **strongly recommended**.
+- v2.0 will require `product:type` as part of this extension and remove `sar:product_type`.
 
 ### Date and Time
 

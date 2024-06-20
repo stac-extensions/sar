@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+- `sar:product_type` in favor of `product:type`
+
 ### Removed
 
 ### Fixed
