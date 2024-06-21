@@ -47,6 +47,7 @@ To describe frame start and end times, use the
 | sar:looks_azimuth           | number                         | Number of azimuth looks, which is the number of groups of signal samples (looks) parallel to the flight path.                                                                                          |
 | sar:looks_equivalent_number | number                         | The equivalent number of looks (ENL).                                                                                                                                                                  |
 | sar:observation_direction   | string                         | Antenna pointing direction relative to the flight trajectory of the satellite, either `left` or `right`.                                                                                               |
+| sar:relative_burst          | number                         | Identification number that uniquely identifies a burst cycle within each repeat cycle.                                                                                                                  |
 | sar:swath                   | \[[Beam Object](#beam-object)] | Composition of the swath of the SAR acquisition.                                                                                                                                                       |
 
 **Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values 
@@ -66,7 +67,7 @@ In assets `sar:polarizations` can contain duplicate elements and, if possible, t
 
 ### Beam Object
 
-The beam object is used to describe the swath of the SAR acquisition.
+The beam object is used to describe the subswaths of a SAR acquisition.
 According to the instrument mode defined in `sar:instrument_mode`, the `sar:swath` is composed of one or more beams.
 
 | Field Name     | Type                  | Description                                                                            |
@@ -74,28 +75,32 @@ According to the instrument mode defined in `sar:instrument_mode`, the `sar:swat
 | id             | string                | **REQUIRED.** The unique identifier of the beam. It can be the subswath identifier     |
 | relative_burst | number                | Identification number that uniquely identifies a burst cycle within each repeat cycle. |
 | polarizations  | \[string]             | Any combination of polarizations.                                                      |
-| view:*         | View extension fields | Additional fields from the [View extension](https://github.com/stac-extensions/view)   |
+
+As every beam is a specific view in the acquisition, the object can also contain additional fields from the [View extension](https://github.com/stac-extensions/view).
 
 > \[!NOTE]
-> If the value of a field repeats for all beams, it is recommended to include it only in the first beam.
+> If the value of a field repeats for all beams, it is recommended to include it only in the parent scope, i.e. usually in the Item Properties.
 
-Example of a `sar:swath` field:
+Examples of a `sar:swath` field for sentinel-1 IW mode:
 
 ```json
+"sar:relative_burst": 541,
+"sar:polarizations": ["VV", "VH"],
 "sar:swath": [
   {
     "id": "IW1",
-    "relative_burst": 541,
-    "polarizations": ["VV", "VH"],
-    "view:incident_angle": 32.0
+    "view:off_nadir": 28.3,
+    "view:incident_angle": 32.1
   },
   {
     "id": "IW2",
-    "view:incident_angle": 34.0
+    "view:off_nadir": 33.3,
+    "view:incident_angle": 37.1
   },
   {
     "id": "IW3",
-    "view:incident_angle": 36.0
+    "view:off_nadir": 38.3,
+    "view:incident_angle": 42.1
   }
 ]
 ```
