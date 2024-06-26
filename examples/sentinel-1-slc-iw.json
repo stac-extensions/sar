@@ -40,24 +40,10 @@
     "processing:datetime": "2024-06-18T18:24:17.837861+00:00",
     "sar:instrument_mode": "IW",
     "processing:level": "L1",
-    "sar:swath": [
-      {
-        "id": "IW1",
-        "relative_burst": 541,
-        "polarizations": [
-          "VV",
-          "VH"
-        ],
-        "view:incident_angle": 32.1
-      },
-      {
-        "id": "IW2",
-        "view:incident_angle": 34.1
-      },
-      {
-        "id": "IW3",
-        "view:incident_angle": 36.1
-      }
+    "sar:beam_ids": [
+      "IW1",
+      "IW2",
+      "IW3"
     ],
     "processing:facility": "Production Service-SERCO",
     "processor:version": "003.80",

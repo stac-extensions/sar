@@ -48,10 +48,8 @@
     "processing:datetime": "2024-05-31T11:25:04.541000+00:00",
     "sar:instrument_mode": "SM",
     "processing:level": "L1",
-    "sar:swath": [
-      {
-        "id": "S6"
-      }
+    "sar:beam_ids": [
+      "S6"
     ],
     "processing:facility": "Production Service-SERCO",
     "processing:version": "003.71",
