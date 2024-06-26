@@ -118,13 +118,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "type": "string",
-            "enum": [
-              "HH",
-              "VV",
-              "HV",
-              "VH"
-            ]
+            "$ref": "#/definitions/polarizations"
           }
         },
         "sar:product_type": {
@@ -179,6 +173,13 @@
             "left",
             "right"
           ]
+        },
+        "sar:beam_ids": {
+          "title": "Beam identifiers",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "patternProperties": {
@@ -187,6 +188,15 @@
         }
       },
       "additionalProperties": false
+    },
+    "polarizations": {
+      "type": "string",
+      "enum": [
+        "HH",
+        "VV",
+        "HV",
+        "VH"
+      ]
     }
   }
 }

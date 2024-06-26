@@ -28,6 +28,9 @@
     "sar:looks_equivalent_number": 2.7,
     "sar:frequency_band": "C",
     "sar:center_frequency": 5.405,
+    "sar:beam_ids": [
+      "EW"
+    ],
     "product:type": "GRD"
   },
   "geometry": {
