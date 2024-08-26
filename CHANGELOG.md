@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `sar:beam_ids` property to describe the swath in the SAR acquisition.
+
 ### Changed
 
 - Required properties of type `string` require a minimum length of `1`.
