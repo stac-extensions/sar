@@ -49,7 +49,7 @@
     "sar:instrument_mode": "SM",
     "processing:level": "L1",
     "sar:beam_ids": [
-      "S6"
+      "S4"
     ],
     "processing:facility": "Production Service-SERCO",
     "processing:version": "003.71",
