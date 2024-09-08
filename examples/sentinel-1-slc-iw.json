@@ -1,0 +1,133 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/alternate-assets/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v1.0.0/schema.json"
+  ],
+  "id": "S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4.SAFE",
+  "collection": "SENTINEL-1",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          2.356894,
+          42.962765
+        ],
+        [
+          5.475332,
+          43.360218
+        ],
+        [
+          5.12441,
+          44.977203
+        ],
+        [
+          1.917198,
+          44.579765
+        ],
+        [
+          2.356894,
+          42.962765
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "sat:absolute_orbit": 54381,
+    "sat:orbit_state": "ascending",
+    "processing:datetime": "2024-06-18T18:24:17.837861+00:00",
+    "sar:instrument_mode": "IW",
+    "processing:level": "L1",
+    "sar:beam_ids": [
+      "IW1",
+      "IW2",
+      "IW3"
+    ],
+    "processing:facility": "Production Service-SERCO",
+    "processor:version": "003.80",
+    "platform": "sentinel-1a",
+    "instruments": [
+      "SAR"
+    ],
+    "sat:relative_orbit": 59,
+    "sar:polarizations": [
+      "VV",
+      "VH"
+    ],
+    "constellation": "sentinel-1",
+    "datetime": "2024-06-18T17:39:36.336Z",
+    "end_datetime": "2024-06-18T17:40:03.297Z",
+    "start_datetime": "2024-06-18T17:39:36.336Z",
+    "product:type": "IW_SLC__1S"
+  },
+  "bbox": [
+    1.917198,
+    42.962765,
+    5.475332,
+    44.977203
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "iw1-vh": {
+      "href": "https://sentinel1.s3.us-west-2.amazonaws.com/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4_IW1_VH.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "IW1 VH Band",
+      "roles": [
+        "data"
+      ]
+    },
+    "iw1-vv": {
+      "href": "https://sentinel1.s3.us-west-2.amazonaws.com/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4_IW1_VV.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "IW1 VV Band",
+      "roles": [
+        "data"
+      ]
+    },
+    "iw2-vh": {
+      "href": "https://sentinel1.s3.us-west-2.amazonaws.com/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4_IW2_VH.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "IW2 VH Band",
+      "roles": [
+        "data"
+      ]
+    },
+    "iw2-vv": {
+      "href": "https://sentinel1.s3.us-west-2.amazonaws.com/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4_IW2_VV.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "IW2 VV Band",
+      "roles": [
+        "data"
+      ]
+    },
+    "iw3-vh": {
+      "href": "https://sentinel1.s3.us-west-2.amazonaws.com/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4_IW3_VH.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "IW3 VH Band",
+      "roles": [
+        "data"
+      ]
+    },
+    "iw3-vv": {
+      "href": "https://sentinel1.s3.us-west-2.amazonaws.com/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4/S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4_IW3_VV.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "IW3 VV Band",
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}

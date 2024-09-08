@@ -1,0 +1,107 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/sar/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/product/v0.1.0/schema.json"
+  ],
+  "id": "S1A_S4_GRDH_1SDV_20240531T073124_20240531T073144_054112_06947D_072C",
+  "collection": "SENTINEL-1",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -24.488338,
+          14.122218
+        ],
+        [
+          -24.251352,
+          15.285328
+        ],
+        [
+          -24.985012,
+          15.424737
+        ],
+        [
+          -25.217945,
+          14.262449
+        ],
+        [
+          -24.488338,
+          14.122218
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -25.217945,
+    14.122218,
+    -24.251352,
+    15.424737
+  ],
+  "properties": {
+    "sat:absolute_orbit": 54112,
+    "sat:orbit_state": "descending",
+    "processing:datetime": "2024-05-31T11:25:04.541000+00:00",
+    "sar:instrument_mode": "SM",
+    "processing:level": "L1",
+    "sar:beam_ids": [
+      "S4"
+    ],
+    "processing:facility": "Production Service-SERCO",
+    "processing:version": "003.71",
+    "constellation": "sentinel-1",
+    "Instruments": [
+      "SAR"
+    ],
+    "sat:relative_orbit": 140,
+    "sar:polarizations": [
+      "VV",
+      "VH"
+    ],
+    "platforn": "sentinel-1a",
+    "datetime": "2024-05-31T07:31:24.961Z",
+    "end_datetime": "2024-05-31T07:31:44.204Z",
+    "start_datetime": "2024-05-31T07:31:24.961Z",
+    "product:type": "S4_GRDH_1S-COG",
+    "sar:frequency_band": "C"
+  },
+  "assets": {
+    "vh": {
+      "href": "https://example.com/collections/sentinel-1/items/S1A_S4_GRDH_1SDV_20240531T073124_20240531T073144_054112_06947D_072C/assets/s1a-s4-grd-vh-20240531t073124-20240531t073144-054112-06947d-002-cog.tiff",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "VH Band",
+      "sar:polarizations": [
+        "VH"
+      ]
+    },
+    "vv": {
+      "href": "https://example.com/collections/sentinel-1/items/S1A_S4_GRDH_1SDV_20240531T073124_20240531T073144_054112_06947D_072C/assets/s1a-s4-grd-vv-20240531t073124-20240531t073144-054112-06947d-001-cog.tiff",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "VV Band",
+      "sar:polarizations": [
+        "VV"
+      ]
+    },
+    "thumbnail": {
+      "href": "https://example.com/collections/sentinel-1/items/S1A_S4_GRDH_1SDV_20240531T073124_20240531T073144_054112_06947D_072C/assets/s1a-s4-grd-thumbnail-20240531t073124-20240531t073144-054112-06947d-072c.png",
+      "type": "image/png",
+      "title": "Thumbnail"
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    }
+  ]
+}
