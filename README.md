@@ -1,10 +1,10 @@
 # SAR Extension Specification
 
 - **Title:** SAR
-- **Identifier:** <https://stac-extensions.github.io/sar/v1.0.0/schema.json>
+- **Identifier:** <https://stac-extensions.github.io/sar/v1.1.0/schema.json>
 - **Field Name Prefix:** sar
 - **Scope:** Item, Collection
-- **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/blob/master/extensions/README.md#extension-maturity):** Candidate
+- **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/blob/master/extensions/README.md#extension-maturity):** Stable
 - **Owner**: @m-mohr, @emmanuelmathot
 - **History**: [Prior to March 2, 2021](https://github.com/radiantearth/stac-spec/commits/v1.0.0-rc.1/extensions/sar)
 
