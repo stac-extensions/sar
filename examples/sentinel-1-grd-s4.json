@@ -54,7 +54,7 @@
     "processing:facility": "Production Service-SERCO",
     "processing:version": "003.71",
     "constellation": "sentinel-1",
-    "Instruments": [
+    "instruments": [
       "SAR"
     ],
     "sat:relative_orbit": 140,
