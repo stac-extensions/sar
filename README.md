@@ -11,12 +11,12 @@
 This document explains the fields of the Synthetic-Aperture Radar (SAR) Extension to the
 [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
 
-SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system 
+SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system
 such as Sentinel-1, RADARSAT or EnviSAT.
 
-If the data has been collected by a satellite, it is strongly recommended to use the 
-[`sat` extension](https://github.com/stac-extensions/sat). 
-If the data has been collected on an airborne platform it is strongly recommended to use the 
+If the data has been collected by a satellite, it is strongly recommended to use the
+[`sat` extension](https://github.com/stac-extensions/sat).
+If the data has been collected on an airborne platform it is strongly recommended to use the
 [Instrument Fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#instrument).
 
 To describe frame start and end times, use the
@@ -57,10 +57,10 @@ are meant to be measured parallel to the flight path.
 
 #### sar:polarizations
 
-Specifies a single polarization or a polarization combination. For single polarized radars one of 
-`HH`, `VV`, `HV` or `VH` must be set. Fully polarimetric radars add all four polarizations to the array. 
-Dual polarized radars and alternating polarization add the corresponding polarizations to the array, 
-for instance for `HH+HV` add both `HH` and `HV`.
+Specifies a single polarization or a polarization combination. For single polarized radars, one of
+`HH`, `VV`, `HV`, `VH`, `LH`, `LV`, `RH`, `RV`, `CH` or `CV` must be set. For fully polarimetric radars, add all four polarizations to the array.
+For dual polarized radars and alternating polarization, add the corresponding polarizations to the array.
+For instance, for `HH+HV`, add both `HH` and `HV`.
 
 **Important:** In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements. 
 In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
