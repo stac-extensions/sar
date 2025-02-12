@@ -11,12 +11,12 @@
 This document explains the fields of the Synthetic-Aperture Radar (SAR) Extension to the
 [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
 
-SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system
+SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system 
 such as Sentinel-1, RADARSAT or EnviSAT.
 
-If the data has been collected by a satellite, it is strongly recommended to use the
-[`sat` extension](https://github.com/stac-extensions/sat).
-If the data has been collected on an airborne platform it is strongly recommended to use the
+If the data has been collected by a satellite, it is strongly recommended to use the 
+[`sat` extension](https://github.com/stac-extensions/sat). 
+If the data has been collected on an airborne platform it is strongly recommended to use the 
 [Instrument Fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#instrument).
 
 To describe frame start and end times, use the
