@@ -138,11 +138,9 @@
     "require_any_field": {
       "$comment": "Please list all fields here so that we can force the existence of one of them in other parts of the schemas.",
       "anyOf": [
-        {"required": ["sar:instrument_mode"]},
         {"required": ["sar:frequency_band"]},
         {"required": ["sar:center_frequency"]},
         {"required": ["sar:polarizations"]},
-        {"required": ["sar:product_type"]},
         {"required": ["sar:resolution_range"]},
         {"required": ["sar:resolution_azimuth"]},
         {"required": ["sar:pixel_spacing_range"]},
@@ -158,14 +156,6 @@
       "$comment": "Add your new fields here. Don't require them here, do that above in the item schema.",
       "type": "object",
       "properties": {
-        "sar:instrument_mode": {
-          "title": "Instrument Mode",
-          "type": "string",
-          "examples": [
-            "WV"
-          ],
-          "minLength": 1
-        },
         "sar:frequency_band": {
           "title": "Frequency Band",
           "type": "string",
@@ -186,16 +176,6 @@
         },
         "sar:polarizations": {
           "$ref": "#/definitions/sar_polarizations"
-        },
-        "sar:product_type": {
-          "title": "Product type",
-          "type": "string",
-          "minLength": 1,
-          "examples": [
-            "SSC",
-            "MGD",
-            "SGC"
-          ]
         },
         "sar:resolution_range": {
           "title": "Resolution range (m)",

@@ -64,17 +64,15 @@ The fields in the table below can be used in these parts of STAC documents:
 | sar:observation_direction   | string    | Antenna pointing direction relative to the flight trajectory of the satellite, either `left` or `right`. |
 | sar:relative_burst          | number    | Identification number that uniquely identifies a burst cycle within each repeat cycle. |
 | sar:beam_ids                | \[string] | Composition of the swath of the SAR acquision referencing the beam identifiers. |
-| sar:product_type            | string    | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* See [Product type](#product-type). |
-| sar:instrument_mode         | string    | ***DEPRECATED** in favor of [`altm:instrument_mode`](https://github.com/stac-extensions/altimetry).* See [Instrument details](#instrument-details). |
 
 > \[!CAUTION]  
 >
 > - v1.0 of the extension did require `sar:product_type` and `sar:instrument_mode`.
-> - v1.1 deprecates `sar:product_type` and it's not required any longer, but
+> - v1.1 deprecated `sar:product_type` and it's not required any longer, but
 >   [`product:type`](https://github.com/stac-extensions/product) is **strongly recommended**.
-> - v1.2 deprecates `sar:instrument_mode` and it's not required any longer, but
+> - v1.2 deprecated `sar:instrument_mode` and it's not required any longer, but
 >   [`altm:instrument_mode` and `altm:instrument_type`](https://github.com/stac-extensions/altimetry) are **strongly recommended**.
-> - v2.0 is going to remove `sar:product_type` and `sar:instrument_mode`.
+> - v2.0 removed `sar:product_type` and `sar:instrument_mode`.
 
 ### Additional Field Information
 
