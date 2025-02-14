@@ -11,12 +11,12 @@
 This document explains the fields of the Synthetic-Aperture Radar (SAR) Extension to the
 [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
 
-SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system 
+SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system
 such as Sentinel-1, RADARSAT or EnviSAT.
 
-If the data has been collected by a satellite, it is strongly recommended to use the 
-[`sat` extension](https://github.com/stac-extensions/sat). 
-If the data has been collected on an airborne platform it is strongly recommended to use the 
+If the data has been collected by a satellite, it is strongly recommended to use the
+[`sat` extension](https://github.com/stac-extensions/sat).
+If the data has been collected on an airborne platform it is strongly recommended to use the
 [Instrument Fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#instrument).
 
 To describe frame start and end times, use the
@@ -50,7 +50,7 @@ To describe frame start and end times, use the
 | sar:relative_burst          | number    | Identification number that uniquely identifies a burst cycle within each repeat cycle.                                                                                                                 |
 | sar:beam_ids                | \[string] | Composition of the swath of the SAR acquision referencing the beam identifiers.                                                                                                                        |
 
-**Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values 
+**Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values
 are meant to be measured parallel to the flight path.
 
 ### Additional Field Information
@@ -62,13 +62,13 @@ Specifies a single polarization or a polarization combination. For single polari
 For dual polarized radars and alternating polarization, add the corresponding polarizations to the array.
 For instance, for `HH+HV`, add both `HH` and `HV`.
 
-**Important:** In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements. 
+**Important:** In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements.
 In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
 
 #### sar:beam_ids
 
 The `sar:beam_ids` field is used to reference the beam identifiers of the SAR acquisition. According to the mission and the sensor mode,
-the beam identifiers can be used to identify the composition of the swath of the SAR acquisition. 
+the beam identifiers can be used to identify the composition of the swath of the SAR acquisition.
 The beam identifiers are usually provided in the metadata of the SAR data.
 
 ### Common Frequency Band Names
@@ -104,12 +104,13 @@ A list of suggestions for [`product:type`](https://github.com/stac-extensions/pr
 | SLC          | complex   | Single-look Ground projected Complex image (used by Sentinel-1) |
 
 This can vary by data provider, who all may use slightly different names.
-Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`. 
+Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`.
 
-**Note:**
-- v1.0 of the extension did require `sar:product_type`.
-- v1.1 deprecates `sar:product_type` and it's not required any longer, but `product:type` is **strongly recommended**.
-- v2.0 will require `product:type` as part of this extension and remove `sar:product_type`.
+> [!NOTE]  
+>
+> - v1.0 of the extension did require `sar:product_type`.
+> - v1.1 deprecates `sar:product_type` and it's not required any longer, but `product:type` is **strongly recommended**.
+> - v2.0 will require `product:type` as part of this extension and remove `sar:product_type`.
 
 ### Date and Time
 
@@ -147,16 +148,18 @@ for running tests are copied here for convenience.
 
 ### Running tests
 
-The same checks that run as checks on PR's are part of the repository and can be run locally to verify that changes are valid. 
+The same checks that run as checks on PR's are part of the repository and can be run locally to verify that changes are valid.
 To run tests locally, you'll need `npm`, which is a standard part of any [node.js installation](https://nodejs.org/en/download/).
 
-First you'll need to install everything with npm once. Just navigate to the root of this repository and on 
+First you'll need to install everything with npm once. Just navigate to the root of this repository and on
 your command line run:
+
 ```bash
 npm install
 ```
 
 Then to check markdown formatting and test the examples against the JSON schema, you can run:
+
 ```bash
 npm test
 ```
@@ -164,6 +167,7 @@ npm test
 This will spit out the same texts that you see online, and you can then go and fix your markdown or examples.
 
 If the tests reveal formatting problems with the examples, you can fix them with:
+
 ```bash
 npm run format-examples
 ```
