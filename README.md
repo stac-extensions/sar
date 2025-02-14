@@ -57,10 +57,10 @@ are meant to be measured parallel to the flight path.
 
 #### sar:polarizations
 
-Specifies a single polarization or a polarization combination. For single polarized radars one of 
-`HH`, `VV`, `HV` or `VH` must be set. Fully polarimetric radars add all four polarizations to the array. 
-Dual polarized radars and alternating polarization add the corresponding polarizations to the array, 
-for instance for `HH+HV` add both `HH` and `HV`.
+Specifies a single polarization or a polarization combination. For single polarized radars, one of
+`HH`, `VV`, `HV`, `VH`, `LH`, `LV`, `RH`, `RV`, `CH` or `CV` must be set. For fully polarimetric radars, add all four polarizations to the array.
+For dual polarized radars and alternating polarization, add the corresponding polarizations to the array.
+For instance, for `HH+HV`, add both `HH` and `HV`.
 
 **Important:** In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements. 
 In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
