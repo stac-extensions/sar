@@ -38,7 +38,6 @@ To describe frame start and end times, use the
 | sar:frequency_band          | string    | **REQUIRED.** The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names.                 |
 | sar:center_frequency        | number    | The center frequency of the instrument, in gigahertz (GHz).                                                                                                                                            |
 | sar:polarizations           | \[string] | **REQUIRED.** Any combination of polarizations.                                                                                                                                                        |
-| sar:product_type            | string    | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* The product type, for example `SSC`, `MGD`, or `SGC`                                                        |
 | sar:resolution_range        | number    | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m).                                                                |
 | sar:resolution_azimuth      | number    | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m).                                                                   |
 | sar:pixel_spacing_range     | number    | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`.               |
@@ -106,7 +105,7 @@ A list of suggestions for [`product:type`](https://github.com/stac-extensions/pr
 This can vary by data provider, who all may use slightly different names.
 Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`.
 
-> [!NOTE]  
+> \[!NOTE]  
 >
 > - v1.0 of the extension did require `sar:product_type`.
 > - v1.1 deprecates `sar:product_type` and it's not required any longer, but `product:type` is **strongly recommended**.

@@ -121,16 +121,6 @@
             "$ref": "#/definitions/polarizations"
           }
         },
-        "sar:product_type": {
-          "title": "Product type",
-          "type": "string",
-          "minLength": 1,
-          "examples": [
-            "SSC",
-            "MGD",
-            "SGC"
-          ]
-        },
         "sar:resolution_range": {
           "title": "Resolution range (m)",
           "type": "number",

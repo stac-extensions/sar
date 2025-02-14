@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added `LH`, `LV`, `RH`, `RV`, `CH` and `CV` enumerations to `sar:polarizations` to support compact polarization.
 
+### Removed
+
+- `sar:product_type` in favor of `product:type`
+
 ## [v1.1.0] - 2024-12-18
 
 ### Added
