@@ -2,7 +2,9 @@
   "type": "Feature",
   "stac_version": "1.0.0",
   "stac_extensions": [
+    "https://stac-extensions.github.io/sar/v1.1.0/schema.json",
     "https://stac-extensions.github.io/alternate-assets/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/altimetry/v0.1.0/schema.json",
     "https://stac-extensions.github.io/storage/v1.0.0/schema.json"
   ],
   "id": "S1A_IW_SLC__1SDV_20240618T173936_20240618T174003_054381_069DC0_C1A4.SAFE",
@@ -35,32 +37,34 @@
     ]
   },
   "properties": {
-    "sat:absolute_orbit": 54381,
-    "sat:orbit_state": "ascending",
-    "processing:datetime": "2024-06-18T18:24:17.837861+00:00",
-    "sar:instrument_mode": "IW",
-    "processing:level": "L1",
-    "sar:beam_ids": [
-      "IW1",
-      "IW2",
-      "IW3"
-    ],
-    "processing:facility": "Production Service-SERCO",
-    "processor:version": "003.80",
     "platform": "sentinel-1a",
     "instruments": [
       "SAR"
-    ],
-    "sat:relative_orbit": 59,
-    "sar:polarizations": [
-      "VV",
-      "VH"
     ],
     "constellation": "sentinel-1",
     "datetime": "2024-06-18T17:39:36.336Z",
     "end_datetime": "2024-06-18T17:40:03.297Z",
     "start_datetime": "2024-06-18T17:39:36.336Z",
-    "product:type": "IW_SLC__1S"
+    "altm:instrument_type": "sar",
+    "altm:instrument_mode": "IW",
+    "processing:datetime": "2024-06-18T18:24:17.837861Z",
+    "processing:level": "L1",
+    "processing:facility": "Production Service-SERCO",
+    "processing:version": "003.80",
+    "product:type": "IW_SLC__1S",
+    "sat:absolute_orbit": 54381,
+    "sat:relative_orbit": 59,
+    "sat:orbit_state": "ascending",
+    "sar:frequency_band": "C",
+    "sar:beam_ids": [
+      "IW1",
+      "IW2",
+      "IW3"
+    ],
+    "sar:polarizations": [
+      "VV",
+      "VH"
+    ]
   },
   "bbox": [
     1.917198,

@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `sar:instrument_mode` in favor of `altm:instrument_mode`
 
+### Fixed
+
+- Fixed and updated examples
+
 ## [v1.1.0] - 2024-12-18
 
 ### Added

@@ -3,6 +3,7 @@
   "stac_version": "1.0.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/sar/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/altimetry/v0.1.0/schema.json",
     "https://stac-extensions.github.io/product/v0.1.0/schema.json"
   ],
   "id": "sentinel-1-example",
@@ -15,7 +16,6 @@
     "instruments": [
       "c-sar"
     ],
-    "sar:instrument_mode": "EW",
     "sar:polarizations": [
       "HH"
     ],
@@ -31,6 +31,8 @@
     "sar:beam_ids": [
       "EW"
     ],
+    "altm:instrument_type": "sar",
+    "altm:instrument_mode": "EW",
     "product:type": "GRD"
   },
   "geometry": {
