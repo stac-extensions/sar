@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `LH`, `LV`, `RH`, `RV`, `CH` and `CV` enumerations to `sar:polarizations` to support compact polarization.
+- Best practices for `altm:instrument_mode` and `altm:instrument_type`
+
+### Deprecated
+
+- `sar:instrument_mode` in favor of `altm:instrument_mode`
 
 ## [v1.1.0] - 2024-12-18
 

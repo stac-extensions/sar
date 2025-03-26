@@ -32,7 +32,6 @@
           "allOf": [
             {
               "required": [
-                "sar:instrument_mode",
                 "sar:frequency_band",
                 "sar:polarizations"
               ],

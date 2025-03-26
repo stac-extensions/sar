@@ -32,26 +32,37 @@ To describe frame start and end times, use the
 
 ## Item Properties or Asset Fields
 
-| Field Name                  | Type      | Description                                                                                                                                                                                            |
-| --------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| sar:instrument_mode         | string    | **REQUIRED.** The name of the sensor acquisition mode that is commonly used. This should be the short name, if available. For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites. |
-| sar:frequency_band          | string    | **REQUIRED.** The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names.                 |
-| sar:center_frequency        | number    | The center frequency of the instrument, in gigahertz (GHz).                                                                                                                                            |
-| sar:polarizations           | \[string] | **REQUIRED.** Any combination of polarizations.                                                                                                                                                        |
-| sar:product_type            | string    | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* The product type, for example `SSC`, `MGD`, or `SGC`                                                        |
-| sar:resolution_range        | number    | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m).                                                                |
-| sar:resolution_azimuth      | number    | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m).                                                                   |
-| sar:pixel_spacing_range     | number    | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`.               |
-| sar:pixel_spacing_azimuth   | number    | The azimuth pixel spacing, which is the distance between adjacent pixels parallel to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`.                  |
-| sar:looks_range             | number    | Number of range looks, which is the number of groups of signal samples (looks) perpendicular to the flight path.                                                                                       |
-| sar:looks_azimuth           | number    | Number of azimuth looks, which is the number of groups of signal samples (looks) parallel to the flight path.                                                                                          |
-| sar:looks_equivalent_number | number    | The equivalent number of looks (ENL).                                                                                                                                                                  |
-| sar:observation_direction   | string    | Antenna pointing direction relative to the flight trajectory of the satellite, either `left` or `right`.                                                                                               |
-| sar:relative_burst          | number    | Identification number that uniquely identifies a burst cycle within each repeat cycle.                                                                                                                 |
-| sar:beam_ids                | \[string] | Composition of the swath of the SAR acquision referencing the beam identifiers.                                                                                                                        |
+> \[!IMPORTANT]  
+>
+> In this specification *range* values are meant to be measured perpendicular to the flight path
+> and *azimuth* values are meant to be measured parallel to the flight path.
 
-**Note:** In this specification *range* values are meant to be measured perpendicular to the flight path and *azimuth* values
-are meant to be measured parallel to the flight path.
+| Field Name                  | Type      | Description |
+| --------------------------- | --------- | ----------- |
+| sar:polarizations           | \[string] | **REQUIRED.** Any combination of polarizations. |
+| sar:frequency_band          | string    | **REQUIRED.** The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names. |
+| sar:center_frequency        | number    | The center frequency of the instrument, in gigahertz (GHz). |
+| sar:resolution_range        | number    | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m). |
+| sar:resolution_azimuth      | number    | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m). |
+| sar:pixel_spacing_range     | number    | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`. |
+| sar:pixel_spacing_azimuth   | number    | The azimuth pixel spacing, which is the distance between adjacent pixels parallel to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`. |
+| sar:looks_range             | number    | Number of range looks, which is the number of groups of signal samples (looks) perpendicular to the flight path. |
+| sar:looks_azimuth           | number    | Number of azimuth looks, which is the number of groups of signal samples (looks) parallel to the flight path. |
+| sar:looks_equivalent_number | number    | The equivalent number of looks (ENL). |
+| sar:observation_direction   | string    | Antenna pointing direction relative to the flight trajectory of the satellite, either `left` or `right`. |
+| sar:relative_burst          | number    | Identification number that uniquely identifies a burst cycle within each repeat cycle. |
+| sar:beam_ids                | \[string] | Composition of the swath of the SAR acquision referencing the beam identifiers. |
+| sar:product_type            | string    | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* See [Product type](#product-type). |
+| sar:instrument_mode         | string    | ***DEPRECATED** in favor of [`altm:instrument_mode`](https://github.com/stac-extensions/altimetry).* See [Instrument details](#instrument-details). |
+
+> \[!CAUTION]  
+>
+> - v1.0 of the extension did require `sar:product_type` and `sar:instrument_mode`.
+> - v1.1 deprecates `sar:product_type` and it's not required any longer, but
+>   [`product:type`](https://github.com/stac-extensions/product) is **strongly recommended**.
+> - v1.2 deprecates `sar:instrument_mode` and it's not required any longer, but
+>   [`altm:instrument_mode` and `altm:instrument_type`](https://github.com/stac-extensions/altimetry) are **strongly recommended**.
+> - v2.0 may require `product:type`, `altm:instrument_mode`, and `altm:instrument_type` as part of this extension and is going to remove `sar:product_type` and `sar:instrument_mode`.
 
 ### Additional Field Information
 
@@ -62,8 +73,10 @@ Specifies a single polarization or a polarization combination. For single polari
 For dual polarized radars and alternating polarization, add the corresponding polarizations to the array.
 For instance, for `HH+HV`, add both `HH` and `HV`.
 
-**Important:** In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements.
-In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
+> \[!IMPORTANT]  
+>
+> In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements.
+> In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
 
 #### sar:beam_ids
 
@@ -106,11 +119,14 @@ A list of suggestions for [`product:type`](https://github.com/stac-extensions/pr
 This can vary by data provider, who all may use slightly different names.
 Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`.
 
-> [!NOTE]  
->
-> - v1.0 of the extension did require `sar:product_type`.
-> - v1.1 deprecates `sar:product_type` and it's not required any longer, but `product:type` is **strongly recommended**.
-> - v2.0 will require `product:type` as part of this extension and remove `sar:product_type`.
+### Instrument details
+
+The instrument type and mode can be provided using the [Altimetry Extension](https://github.com/stac-extensions/altimetry):
+
+- `altm:instrument_type`: The instrument type, must be set to `sar`,
+- `altm:instrument_mode`: The name of the sensor acquisition mode that is commonly used.
+  This should be the short name, if available.
+  For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites.
 
 ### Date and Time
 
@@ -119,9 +135,9 @@ The center time of the frame should be specified with the `datetime` property fo
 
 ## Best Practices
 
-One of the emerging best practices is to use [Asset Roles](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#asset-roles) 
-to provide clients with more information about the assets in an item. The following list includes a shared vocabulary for some common SAR assets. 
-This list should not be considered definitive, and implementors are welcome to use other asset roles. If consensus and tooling consolidates around 
+One of the emerging best practices is to use [Asset Roles](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#asset-roles)
+to provide clients with more information about the assets in an item. The following list includes a shared vocabulary for some common SAR assets.
+This list should not be considered definitive, and implementors are welcome to use other asset roles. If consensus and tooling consolidates around
 these role names then they will be specified in the future as more standard than just 'best practices'.
 
 | Role Name                 | Description                                                                                                                                                                                     |
