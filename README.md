@@ -14,13 +14,17 @@ This document explains the fields of the Synthetic-Aperture Radar (SAR) Extensio
 SAR data is considered to be data that represents a snapshot of the earth for a single date and time taken by a synthetic-aperture radar system
 such as Sentinel-1, RADARSAT or EnviSAT.
 
-If the data has been collected by a satellite, it is strongly recommended to use the
-[`sat` extension](https://github.com/stac-extensions/sat).
-If the data has been collected on an airborne platform it is strongly recommended to use the
+If the data has been collected by a satellite, it is recommended to use the
+[Satellite extension](https://github.com/stac-extensions/sat).
+If the data has been collected on an airborne platform it is recommended to use the
 [Instrument Fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#instrument).
+In both cases the instrument details should be provided using the
+[Altimetry extension](https://github.com/stac-extensions/altimetry)
 
 To describe frame start and end times, use the
 [Date and Time Range fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#date-and-time-range).
+
+To describe the product type, use the [Product extension](https://github.com/stac-extensions/product).
 
 - Examples:
   - [Envisat](examples/envisat.json)
@@ -30,7 +34,15 @@ To describe frame start and end times, use the
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
 
-## Item Properties or Asset Fields
+## Fields
+
+The fields in the table below can be used in these parts of STAC documents:
+
+- [ ] Catalogs
+- [x] Collections
+- [x] Item Properties (incl. Summaries in Collections)
+- [x] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
+- [ ] Links
 
 > \[!IMPORTANT]  
 >
@@ -39,9 +51,9 @@ To describe frame start and end times, use the
 
 | Field Name                  | Type      | Description |
 | --------------------------- | --------- | ----------- |
-| sar:polarizations           | \[string] | **REQUIRED.** Any combination of polarizations. |
-| sar:frequency_band          | string    | **REQUIRED.** The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names. |
-| sar:center_frequency        | number    | The center frequency of the instrument, in gigahertz (GHz). |
+| sar:polarizations           | \[string] | RECOMMENDED. Any combination of polarizations. |
+| sar:frequency_band          | string    | RECOMMENDED. The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names. |
+| sar:center_frequency        | number    | RECOMMENDED. The center frequency of the instrument, in gigahertz (GHz). |
 | sar:resolution_range        | number    | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m). |
 | sar:resolution_azimuth      | number    | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m). |
 | sar:pixel_spacing_range     | number    | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`. |
@@ -62,20 +74,22 @@ To describe frame start and end times, use the
 >   [`product:type`](https://github.com/stac-extensions/product) is **strongly recommended**.
 > - v1.2 deprecates `sar:instrument_mode` and it's not required any longer, but
 >   [`altm:instrument_mode` and `altm:instrument_type`](https://github.com/stac-extensions/altimetry) are **strongly recommended**.
-> - v2.0 may require `product:type`, `altm:instrument_mode`, and `altm:instrument_type` as part of this extension and is going to remove `sar:product_type` and `sar:instrument_mode`.
+> - v2.0 is going to remove `sar:product_type` and `sar:instrument_mode`.
 
 ### Additional Field Information
 
 #### sar:polarizations
 
-Specifies a single polarization or a polarization combination. For single polarized radars, one of
-`HH`, `VV`, `HV`, `VH`, `LH`, `LV`, `RH`, `RV`, `CH` or `CV` must be set. For fully polarimetric radars, add all four polarizations to the array.
+Specifies a single polarization or a polarization combination.
+Allowed values: `HH`, `VV`, `HV`, `VH`, `LH`, `LV`, `RH`, `RV`, `CH` or `CV`
+For single polarized radars, one the allowed values must be set.
 For dual polarized radars and alternating polarization, add the corresponding polarizations to the array.
+For fully polarimetric radars, add all polarizations to the array.
 For instance, for `HH+HV`, add both `HH` and `HV`.
 
 > \[!IMPORTANT]  
 >
-> In the `properties` of a STAC Item `sar:polarizations` must be a set with unique elements.
+> In Item Properties and Collections, `sar:polarizations` must be a set with unique elements.
 > In assets `sar:polarizations` can contain duplicate elements and, if possible, the polarizations must appear in the same order as in the file.
 
 #### sar:beam_ids
@@ -84,7 +98,7 @@ The `sar:beam_ids` field is used to reference the beam identifiers of the SAR ac
 the beam identifiers can be used to identify the composition of the swath of the SAR acquisition.
 The beam identifiers are usually provided in the metadata of the SAR data.
 
-### Common Frequency Band Names
+### sar:frequency_band - Common Frequency Band Names
 
 The `sar:frequency_band` is the name that is commonly used to refer to that band's spectral
 properties. The table below shows the common name based on the wavelength and frequency ranges for several SAR satellites.
@@ -102,6 +116,7 @@ properties. The table below shows the common name based on the wavelength and fr
 
 ### Product type
 
+It is RECOMMENDED to include the `product:type` field.
 The product type for SAR data defines the type of processed data contained in the assets.
 A list of suggestions for [`product:type`](https://github.com/stac-extensions/product) include:
 
@@ -123,8 +138,8 @@ Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` 
 
 The instrument type and mode can be provided using the [Altimetry Extension](https://github.com/stac-extensions/altimetry):
 
-- `altm:instrument_type`: The instrument type, must be set to `sar`,
-- `altm:instrument_mode`: The name of the sensor acquisition mode that is commonly used.
+- `altm:instrument_type`: RECOMMENDED. The instrument type, must be set to `sar`,
+- `altm:instrument_mode`: RECOMMENDED. The name of the sensor acquisition mode that is commonly used.
   This should be the short name, if available.
   For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites.
 
