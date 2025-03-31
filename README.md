@@ -18,8 +18,6 @@ If the data has been collected by a satellite, it is recommended to use the
 [Satellite extension](https://github.com/stac-extensions/sat).
 If the data has been collected on an airborne platform it is recommended to use the
 [Instrument Fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#instrument).
-In both cases the instrument details should be provided using the
-[Altimetry extension](https://github.com/stac-extensions/altimetry)
 
 To describe frame start and end times, use the
 [Date and Time Range fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#date-and-time-range).
@@ -52,6 +50,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | Field Name                  | Type      | Description |
 | --------------------------- | --------- | ----------- |
 | sar:polarizations           | \[string] | RECOMMENDED. Any combination of polarizations. |
+| sar:instrument_mode         | string    | RECOMMENDED. The name of the sensor acquisition mode that is commonly used. This should be the short name, if available. For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites. |
 | sar:frequency_band          | string    | RECOMMENDED. The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names. |
 | sar:center_frequency        | number    | RECOMMENDED. The center frequency of the instrument, in gigahertz (GHz). |
 | sar:resolution_range        | number    | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m). |
@@ -65,16 +64,13 @@ The fields in the table below can be used in these parts of STAC documents:
 | sar:relative_burst          | number    | Identification number that uniquely identifies a burst cycle within each repeat cycle. |
 | sar:beam_ids                | \[string] | Composition of the swath of the SAR acquision referencing the beam identifiers. |
 | sar:product_type            | string    | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* See [Product type](#product-type). |
-| sar:instrument_mode         | string    | ***DEPRECATED** in favor of [`altm:instrument_mode`](https://github.com/stac-extensions/altimetry).* See [Instrument details](#instrument-details). |
 
 > \[!CAUTION]  
 >
-> - v1.0 of the extension did require `sar:product_type` and `sar:instrument_mode`.
+> - v1.0 of the extension did require `sar:product_type`.
 > - v1.1 deprecates `sar:product_type` and it's not required any longer, but
 >   [`product:type`](https://github.com/stac-extensions/product) is **strongly recommended**.
-> - v1.2 deprecates `sar:instrument_mode` and it's not required any longer, but
->   [`altm:instrument_mode` and `altm:instrument_type`](https://github.com/stac-extensions/altimetry) are **strongly recommended**.
-> - v2.0 is going to remove `sar:product_type` and `sar:instrument_mode`.
+> - v2.0 is going to remove `sar:product_type`.
 
 ### Additional Field Information
 
@@ -133,15 +129,6 @@ A list of suggestions for [`product:type`](https://github.com/stac-extensions/pr
 
 This can vary by data provider, who all may use slightly different names.
 Sentinel-1 for instance uses `GRD`, which is the same as the more general `MGD` and `SLC` instead of `SGC`.
-
-### Instrument details
-
-The instrument type and mode can be provided using the [Altimetry Extension](https://github.com/stac-extensions/altimetry):
-
-- `altm:instrument_type`: RECOMMENDED. The instrument type, must be set to `sar`,
-- `altm:instrument_mode`: RECOMMENDED. The name of the sensor acquisition mode that is commonly used.
-  This should be the short name, if available.
-  For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites.
 
 ### Date and Time
 

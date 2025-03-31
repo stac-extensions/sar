@@ -3,7 +3,6 @@
   "stac_version": "1.0.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/sar/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/altimetry/v0.1.0/schema.json",
     "https://stac-extensions.github.io/product/v0.1.0/schema.json"
   ],
   "id": "sar-envisat-example",
@@ -27,8 +26,7 @@
     "sar:looks_azimuth": 4,
     "sar:frequency_band": "C",
     "sar:center_frequency": 5.331,
-    "altm:instrument_type": "sar",
-    "altm:instrument_mode": "GM",
+    "sar:instrument_mode": "GM",
     "product:type": "GM1_1P"
   },
   "geometry": {
