@@ -141,6 +141,7 @@
         {"required": ["sar:instrument_mode"]},
         {"required": ["sar:frequency_band"]},
         {"required": ["sar:center_frequency"]},
+        {"required": ["sar:bandwidth"]},
         {"required": ["sar:polarizations"]},
         {"required": ["sar:product_type"]},
         {"required": ["sar:resolution_range"]},
@@ -182,7 +183,13 @@
         },
         "sar:center_frequency": {
           "title": "Center Frequency (GHz)",
-          "type": "number"
+          "type": "number",
+          "minimumExclusive": 0
+        },
+        "sar:bandwidth": {
+          "title": "Range Bandwidth (GHz)",
+          "type": "number",
+          "minimumExclusive": 0
         },
         "sar:polarizations": {
           "$ref": "#/definitions/sar_polarizations"

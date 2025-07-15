@@ -52,7 +52,8 @@ The fields in the table below can be used in these parts of STAC documents:
 | sar:polarizations           | \[string] | RECOMMENDED. Any combination of polarizations. |
 | sar:instrument_mode         | string    | RECOMMENDED. The name of the sensor acquisition mode that is commonly used. This should be the short name, if available. For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites. |
 | sar:frequency_band          | string    | RECOMMENDED. The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names. |
-| sar:center_frequency        | number    | RECOMMENDED. The center frequency of the instrument, in gigahertz (GHz). |
+| sar:center_frequency        | number    | RECOMMENDED. The center frequency of the radar signal transmitted by the instrument, in gigahertz (GHz). |
+| sar:bandwidth               | number    | The range bandwidth of the SAR instrument, in gigahertz (GHz), representing the full bandwidth used in range compression and image formation. |
 | sar:resolution_range        | number    | The range resolution, which is the maximum ability to distinguish two adjacent targets perpendicular to the flight path, in meters (m). |
 | sar:resolution_azimuth      | number    | The azimuth resolution, which is the maximum ability to distinguish two adjacent targets parallel to the flight path, in meters (m). |
 | sar:pixel_spacing_range     | number    | The range pixel spacing, which is the distance between adjacent pixels perpendicular to the flight path, in meters (m). Strongly RECOMMENDED to be specified for products of type `GRD`. |

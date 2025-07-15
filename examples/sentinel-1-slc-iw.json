@@ -54,6 +54,8 @@
     "sat:relative_orbit": 59,
     "sat:orbit_state": "ascending",
     "sar:frequency_band": "C",
+    "sar:center_frequency": 5.405,
+    "sar:bandwidth": 0.056,
     "sar:beam_ids": [
       "IW1",
       "IW2",
