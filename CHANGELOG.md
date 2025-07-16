@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `sar:bandwidth` to describe the range bandwidth
+
+### Changed
+
+- Set exclusive minimum value of 0 for `sar:center_frequency`
+
 ## [v1.2.0] - 2025-03-31
 
 ### Added
