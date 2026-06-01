@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.1] - 2026-06-01
+
 ### Added
 
 - `sar:relative_burst` (was in the README before, but not part of the schema)
@@ -62,7 +64,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Best practices and asset roles
 
-[Unreleased]: <https://github.com/stac-extensions/sar/compare/v1.3.0...main>
+[Unreleased]: <https://github.com/stac-extensions/sar/compare/v1.3.1...main>
+[v1.3.1]: <https://github.com/stac-extensions/sar/compare/v1.3.0...v1.3.1>
 [v1.3.0]: <https://github.com/stac-extensions/sar/compare/v1.2.0...v1.3.0>
 [v1.2.0]: <https://github.com/stac-extensions/sar/compare/v1.1.0...v1.2.0>
 [v1.1.0]: <https://github.com/stac-extensions/sar/compare/v1.0.0...v1.1.0>

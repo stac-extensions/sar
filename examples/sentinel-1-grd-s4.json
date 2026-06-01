@@ -1,10 +1,10 @@
 {
   "type": "Feature",
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/sar/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/sar/v1.3.1/schema.json",
     "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/product/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/product/v1.0.0/schema.json",
     "https://stac-extensions.github.io/sat/v1.0.0/schema.json"
   ],
   "id": "S1A_S4_GRDH_1SDV_20240531T073124_20240531T073144_054112_06947D_072C",
