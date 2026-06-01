@@ -152,6 +152,7 @@
         {"required": ["sar:looks_azimuth"]},
         {"required": ["sar:looks_equivalent_number"]},
         {"required": ["sar:observation_direction"]},
+        {"required": ["sar:relative_burst"]},
         {"required": ["sar:beam_ids"]}
       ]
     },
@@ -246,6 +247,11 @@
             "left",
             "right"
           ]
+        },
+        "sar:relative_burst": {
+          "title": "Relative burst number",
+          "type": "integer",
+          "minimum": 1
         },
         "sar:beam_ids": {
           "title": "Beam identifiers",
