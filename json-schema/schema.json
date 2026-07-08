@@ -185,12 +185,12 @@
         "sar:center_frequency": {
           "title": "Center Frequency (GHz)",
           "type": "number",
-          "minimumExclusive": 0
+          "exclusiveMinimum": 0
         },
         "sar:bandwidth": {
           "title": "Range Bandwidth (GHz)",
           "type": "number",
-          "minimumExclusive": 0
+          "exclusiveMinimum": 0
         },
         "sar:polarizations": {
           "$ref": "#/definitions/sar_polarizations"
