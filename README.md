@@ -50,7 +50,6 @@ The fields in the table below can be used in these parts of STAC documents:
 | Field Name                  | Type      | Description |
 | --------------------------- | --------- | ----------- |
 | sar:polarizations           | \[string] | RECOMMENDED. Any combination of polarizations. |
-| sar:instrument_mode         | string    | RECOMMENDED. The name of the sensor acquisition mode that is commonly used. This should be the short name, if available. For example, `WV` for "Wave mode" of Sentinel-1 and Envisat ASAR satellites. |
 | sar:frequency_band          | string    | RECOMMENDED. The common name for the frequency band to make it easier to search for bands across instruments. See section "Common Frequency Band Names" for a list of accepted names. |
 | sar:center_frequency        | number    | RECOMMENDED. The center frequency of the radar signal transmitted by the instrument, in gigahertz (GHz). |
 | sar:bandwidth               | number    | The range bandwidth of the SAR instrument, in gigahertz (GHz), representing the full bandwidth used in range compression and image formation. |
@@ -65,6 +64,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | sar:relative_burst          | number    | Identification number that uniquely identifies a burst cycle within each repeat cycle. |
 | sar:beam_ids                | \[string] | Composition of the swath of the SAR acquision referencing the beam identifiers. |
 | sar:product_type            | string    | ***DEPRECATED** in favor of [`product:type`](https://github.com/stac-extensions/product).* See [Product type](#product-type). |
+| sar:instrument_mode         | string    | ***DEPRECATED** in favor of [`instrument_modes`](https://github.com/stac-extensions/instruments#instrument_modes).* |
 
 > \[!CAUTION]  
 >
@@ -72,6 +72,13 @@ The fields in the table below can be used in these parts of STAC documents:
 > - v1.1 deprecates `sar:product_type` and it's not required any longer, but
 >   [`product:type`](https://github.com/stac-extensions/product) is **strongly recommended**.
 > - v2.0 is going to remove `sar:product_type`.
+>
+> ---
+>
+> - v1.0 of the extension did recommend `sar:instrument_mode`.
+> - v1.3.2 deprecates `sar:instrument_mode`, but
+>   [`instrument_modes`](https://github.com/stac-extensions/instruments) is **strongly recommended**.
+> - v2.0 is going to remove `sar:instrument_mode`.
 
 ### Additional Field Information
 

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Deprecated
+
+- Deprecated `sar:instrument_mode`. Instead, use `instrument_modes` from the instruments extension.
+
+### Fixed
+
+- Replaced `minimumExclusive` with `exclusiveMinimum` to provide a fully valid JSON Schema for `sar:center_frequency` and `sar:bandwidth`
+
 ## [v1.3.1] - 2026-06-01
 
 ### Added
