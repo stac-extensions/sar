@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.0.0] - 2026-04-29
+
+### Removed
+
+- `sar:product_type`
+- `sar:instrument_mode`
+
 ## [v1.3.2] - 2026-07-13
 
 ### Deprecated
@@ -74,9 +81,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Best practices and asset roles
 
-[Unreleased]: <https://github.com/stac-extensions/sar/compare/v1.3.2...main>
-[v1.3.2]: <https://github.com/stac-extensions/sar/compare/v1.3.2...v1.3.2>
-[v1.3.1]: <https://github.com/stac-extensions/sar/compare/v1.3.0...v1.3.2>
+[Unreleased]: <https://github.com/stac-extensions/sar/compare/v2.0.0...main>
+[v2.0.0]: <https://github.com/stac-extensions/sar/compare/v1.3.2...v2.0.0>
+[v1.3.2]: <https://github.com/stac-extensions/sar/compare/v1.3.1...v1.3.2>
+[v1.3.1]: <https://github.com/stac-extensions/sar/compare/v1.3.0...v1.3.1>
 [v1.3.0]: <https://github.com/stac-extensions/sar/compare/v1.2.0...v1.3.0>
 [v1.2.0]: <https://github.com/stac-extensions/sar/compare/v1.1.0...v1.2.0>
 [v1.1.0]: <https://github.com/stac-extensions/sar/compare/v1.0.0...v1.1.0>
