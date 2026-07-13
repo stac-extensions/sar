@@ -1,7 +1,7 @@
 # SAR Extension Specification
 
 - **Title:** SAR
-- **Identifier:** <https://stac-extensions.github.io/sar/v1.3.1/schema.json>
+- **Identifier:** <https://stac-extensions.github.io/sar/v1.3.2/schema.json>
 - **Field Name Prefix:** sar
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/blob/master/extensions/README.md#extension-maturity):** Stable
